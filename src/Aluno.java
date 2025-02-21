@@ -1,33 +1,28 @@
 import java.util.Arrays;
 import java.util.Locale;
+
 import java.util.Scanner;
 
 public class Aluno {
 Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
-    String nome ="";
-    String sobrenome = "";
-    String cpf = "";
-    String dataDeNascimento = "";
-    String matriculaAtiva = "";
-
-
-    protected void cadastraraluno(){
+    protected void cadastrarAluno(){
         System.out.println("Qual o nome do aluno ? ");
-        nome = scanner.next();
+        String  nome = scanner.next();
         System.out.println("Qual o Sobrenome do aluno ? ");
-    sobrenome = scanner.next();
+        String sobrenome = scanner.next();
         System.out.println("Qual e o  cpf do aluno ? ");
-        cpf = scanner.next();
+        String   cpf = scanner.next();
         System.out.println("Qual e a data de nascimento do aluno ? ");
-        dataDeNascimento = scanner.next();
+        String  dataDeNascimento = scanner.next();
         System.out.println("A matrícula do aluno esta ativa ");
-        matriculaAtiva = scanner.next();
+        String  matriculaAtiva = scanner.next();
 
     String[] dados = {nome,sobrenome,cpf,dataDeNascimento,matriculaAtiva};
 
     // Enviando dados para a função
         exibirDadosDoAluno(dados);
+
 
 }
 
@@ -43,9 +38,24 @@ Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
                 continue;
             }
             System.out.println("Matrícula do aluno se encontra Ativa : " + dadosDoEstudante[x]);
+
+            if (x==3){
+                cpfEstudante(dadosDoEstudante[x]);
+            }
         }
 
     }
+    private String cpfEstudante( String dados){
+
+       return  "O CPF DO ALUNO É: " + dados;
+
+
+    }
+
+public void consultarDeCpfAluno(){
+    System.out.println();
+}
+
 
 
 }
