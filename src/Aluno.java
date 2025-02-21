@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Aluno {
@@ -27,16 +26,18 @@ Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
     String[] dados = {nome,sobrenome,cpf,dataDeNascimento,matriculaAtiva};
 
+    // Enviando dados para a função
         exibirDadosDoAluno(dados);
 
 }
 
-
-    protected void exibirDadosDoAluno(String[] dados) {
+// definindo como private para que o User ñ tenha acesso evitando bugs
+    private void exibirDadosDoAluno(String[] dados) {
        String[] dadosDoEstudante = dados;
 
         System.out.println(Arrays.toString(dadosDoEstudante));
 
+        // Usando for para exibir se a matrícula esta ativa ou não
         for (int x = 0; x < dadosDoEstudante.length; x++) {
             if (x == 0 || x == 1 || x == 2 || x == 3) {
                 continue;
