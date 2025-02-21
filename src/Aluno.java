@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Aluno {
@@ -12,7 +13,7 @@ Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
     String matriculaAtiva = "";
 
 
-    protected String[] cadastraraluno(){
+    protected void cadastraraluno(){
         System.out.println("Qual o nome do aluno ? ");
         nome = scanner.next();
         System.out.println("Qual o Sobrenome do aluno ? ");
@@ -26,10 +27,13 @@ Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
     String[] dados = {nome,sobrenome,cpf,dataDeNascimento,matriculaAtiva};
 
-    return dados;
+        exibirDadosDoAluno(dados);
+
 }
-    protected void exibirDadosDoAluno() {
-       String[] dadosDoEstudante = {nome, sobrenome, cpf, dataDeNascimento, matriculaAtiva};
+
+
+    protected void exibirDadosDoAluno(String[] dados) {
+       String[] dadosDoEstudante = dados;
 
         System.out.println(Arrays.toString(dadosDoEstudante));
 
@@ -39,6 +43,7 @@ Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
             }
             System.out.println("Matrícula do aluno se encontra Ativa : " + dadosDoEstudante[x]);
         }
+
     }
 
 
