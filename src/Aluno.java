@@ -5,18 +5,23 @@ import java.util.Scanner;
 
 public class Aluno {
 Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+    String nome = "";
+    String sobrenome = "";
+    String cpf = "";
+    String dataDeNascimento = "";
+    String matriculaAtiva = "";
 
     protected void cadastrarAluno(){
         System.out.println("Qual o nome do aluno ? ");
-        String  nome = scanner.next();
+         nome = scanner.next();
         System.out.println("Qual o Sobrenome do aluno ? ");
-        String sobrenome = scanner.next();
+       sobrenome = scanner.next();
         System.out.println("Qual e o  cpf do aluno ? ");
-        String   cpf = scanner.next();
+        cpf = scanner.next();
         System.out.println("Qual e a data de nascimento do aluno ? ");
-        String  dataDeNascimento = scanner.next();
+   dataDeNascimento = scanner.next();
         System.out.println("A matrícula do aluno esta ativa ");
-        String  matriculaAtiva = scanner.next();
+     matriculaAtiva = scanner.next();
 
     String[] dados = {nome,sobrenome,cpf,dataDeNascimento,matriculaAtiva};
 
@@ -40,21 +45,34 @@ Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
             System.out.println("Matrícula do aluno se encontra Ativa : " + dadosDoEstudante[x]);
 
             if (x==3){
-                cpfEstudante(dadosDoEstudante[x]);
+                BuscaPorCpfEstudante(dadosDoEstudante[x]);
             }
         }
 
     }
-    private String cpfEstudante( String dados){
+
+
+    private String BuscaPorCpfEstudante(String dados){
 
        return  "O CPF DO ALUNO É: " + dados;
 
 
     }
 
-public void consultarDeCpfAluno(){
-    System.out.println();
+    public void pesquisarCpf(String cpfInput ){
+        String cpfCadastrado = BuscaPorCpfEstudante(cpf);
+
+        if (cpfInput != cpfCadastrado){
+            System.out.println("CPF INVÁLIDO");
+        }else{
+            System.out.println( "O CPF PERTENCE AO ALUNO(A) :" + cpf);
+        }
+    }
+    public void consultarDeCpfAluno(){
+
+    System.out.println("O CPF DO ALUNO É " + cpf);
 }
+
 
 
 
